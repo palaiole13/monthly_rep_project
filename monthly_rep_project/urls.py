@@ -22,6 +22,10 @@ from monthly_rep import views
 
 urlpatterns = [
     path('', views.home, name='home'), # Map root URL to home view
+    path('accounts/', include('django.contrib.auth.urls')),  # Include authentication URLs
+    path('login/', LoginView.as_view(), name='login'),
+    path('register/', views.register, name='register'),
+    path('reports/', views.view_reports, name='view_reports'),
 ]
 
 #path('admin/', admin.site.urls),
